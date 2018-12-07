@@ -99,21 +99,19 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-  Object.values(arr).forEach(element=>{
-    let result = element.children
-    console.log(result)
-    //if(result===character){
-    if(result.length>0){
-      console.log(true)
-      return true
+  let hasChildren
+  Object.values(arr).forEach(element => {  
+    console.log(kesete)
+    if(element.name === character){
+      
+      if(element.children.length>0){
+      hasChildren = true
     } else{
-      console.log(false)
-      return false
-    }
-  
+      hasChildren = false
+    } 
+  }
   }) 
-
+  return hasChildren
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,7 +124,22 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  let hasChildren
+  Object.entries(arr).forEach(element=>{
+    if(element[1].name === character){
+      
+      if(element[1].children.length>0){
+      hasChildren = true
+    } else{
+      hasChildren = false
+    } 
+  }
+  
+  }) 
+  return hasChildren
 }
+
+ 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -160,7 +173,7 @@ All of these objects should be added to an array named "survivors". Return the "
 For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, ... ].
 ------------------------------------------------------------------------------------------------ */
 
-const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
+// const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
@@ -198,7 +211,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe.only('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
