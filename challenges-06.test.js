@@ -101,7 +101,7 @@ hasChildrenValues(characters, 'Eddard') will return false
 const hasChildrenValues = (arr, character) => {
   let hasChildren
   Object.values(arr).forEach(element => {  
-    console.log(kesete)
+    //console.log(kesete)
     if(element.name === character){
       
       if(element.children.length>0){
