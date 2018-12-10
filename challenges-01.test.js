@@ -106,7 +106,15 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
-}
+  arr.forEach(function(element,index,arr){
+    if(element%3 ===2){
+      arr.pop(element[index])
+    }
+ 
+  })
+  return arr
+ }
+ 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -125,9 +133,21 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
-const createList = (availableItems) => {
-  // Solution code here...
-}
+
+  const createList = (availableItems) => {
+    // Solution code here...
+    let finalList=[]
+    availableItems.forEach(function(element){
+      if(element.available===true){
+        finalList.push(element.name)
+      }
+   
+    })
+    return finalList
+   
+   
+  }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -145,8 +165,21 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
-}
-
+  let Sluarray = []
+  arr.forEach(function(num){
+    if(num%5===0 && num%3===0){
+      Sluarray.push('Fizz Buzz')
+    } else if (num%3===0){
+      Sluarray.push('Fizz')
+    } else if(num%5===0){
+      Sluarray.push('Buzz')
+    } else{
+      Sluarray.push(num)
+    }
+ 
+  })
+  return Sluarray
+ }
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
