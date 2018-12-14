@@ -164,6 +164,7 @@ const removeEvenValues = (arr) => {
     }
     //console.log(arr.splice(i,1))
     //console.log(arr.splice(arr[i],3))
+    //
   }
   return arr
 };
